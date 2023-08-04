@@ -105,14 +105,14 @@ class LineScan(object):
 
         #Anchor Scans
         self.anchor_scan(0)
-
-        if np.max(self.ascans) < 30000:#If anchor scan strength is below thresold, scan next stage
+        print(np.max(self.ascans))
+        if np.max(self.ascans) < 40:#If anchor scan strength is below thresold, scan next stage
             self.anchor_scan(1)
             #print("Step 1")
-        if np.max(self.ascans) < 30000:#If anchor scan strength is below thresold, scan next stage 
+        if np.max(self.ascans) < 40:#If anchor scan strength is below thresold, scan next stage 
             self.anchor_scan(2)
             #print("Step 2")
-        if np.max(self.ascans) < 30000:#If anchor scan strength is below thresold, reset anchor point
+        if np.max(self.ascans) < 40:#If anchor scan strength is below thresold, reset anchor point
             self.A[1] = 277
             #print("Reset")
 
