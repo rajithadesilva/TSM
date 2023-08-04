@@ -27,7 +27,7 @@ $A = argmax \left( \sum_{y=0 → y=h} I(X,y) \right)   (1)$
 
 A triangular ROI is defined in the line scans stage with points A, B (Begin Point) and C (Cease Point) as shown in Figure 1. Equation 2 describes the scanning process for $P_{r}$ by searching for an instance of a variable point $P$ on $BC$ line which yields the highest pixel sum along $AP$ line.
 
-$P_{r} = argmax \Biggl[ \sum{I_{xy}=A}^{P} I(x,y) \Biggr]_{P=B}^{P=C}    (2)$
+$P_{r} = argmax \Biggl[ \sum_{I_{xy}=A→ I_{xy}=P} I(x,y) \Biggr]_{P=B}^{P=C} (2)$
 
 The definition of points $B$ and $C$ are dependent on the crop height, camera mounting height and camera mounting angle. The calibration procedure outlined below allows to set the $B,C$ points at bottom left and bottom right corners of the image frame respectively. However, the $B,C$ points could be tightly defined based on additional observations relevant to a given scenario. For example, a visual servoing controller will always attempt to align the central crop row to a vertical position within the image frame. A maximum possible crop row orientation limit could be established as a prior with sufficient testing of the visual servoing setup. Such priors could be used to limit the relative offset of $B,C$ points from point $A$, leading to a lower computational time for scanning procedure given in Equation 2. Points $B$ and $C$ will always lie on the lowermost edge of the image.
 
