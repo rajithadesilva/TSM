@@ -89,3 +89,14 @@ python triangle_scan_rgb.py --file_type=".png"
 | `--filter_enable` | Enable the complementary filters for scanning in continuous sequential images. Default is `False`. |
 | `--anchor_filter` | Specify the complementary filter strength for anchor scans. Default is 0.95.                |
 | `--line_filter`   | Specify the complementary filter strength for line scans. Default is 0.95.                  |
+
+## Citation
+
+```
+@article{de2022vision,
+  title={Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields},
+  author={de Silva, Rajitha and Cielniak, Grzegorz and Gao, Junfeng},
+  journal={arXiv preprint arXiv:2209.14003},
+  year={2022}
+}
+```
