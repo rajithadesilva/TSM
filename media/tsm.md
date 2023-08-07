@@ -53,3 +53,52 @@ The user is free to mount the camera at any mounting height and pitch angle as l
   <img src="media/calib.png" alt="Alt Text"  width="40%">
   <figcaption>Figure 5: Calibration mask overlay example (Red: Central guideline, Blue: Lateral guidelines, A: Anchor point, B: Begin point, C: Cease point). </figcaption>
 </figure>
+
+## Citation
+
+```
+@article{de2022vision,
+  title={Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields},
+  author={de Silva, Rajitha and Cielniak, Grzegorz and Gao, Junfeng},
+  journal={arXiv preprint arXiv:2209.14003},
+  year={2022}
+}
+```
+
+Link to full paper: [Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields](https://arxiv.org/pdf/2209.14003.pdf)
+
+## Usage
+### Prerequisits
+1. Install dependencies: [OpenCV, NumPy, SK-Image, Seaborn, Pandas, Matplotlib, Glob, Argparse]
+```bash
+pip install opencv-python numpy scikit-image seaborn pandas matplotlib glob3 argparse
+```
+2. Clone the repository.
+```bash
+git clone https://github.com/Rajitha159/TSM.git
+```
+3. Copy the RGB image files to "rgb" folder and predicted crop row masks to "mask" folder(all images must be resized to $512 \times 512$).
+4. Run the following command to generate crop row masks and save them to "out" folder.
+```bash
+python triangle_scan_rgb.py
+```
+5. [Optional] Run the code with parameters in needed. Parameter descriptions are in table below.
+Example: 
+```bash
+python triangle_scan_rgb.py --file_type=".png"
+```
+
+### Parameters
+| Parameter         | Description                                                                                     |
+| ----------------- | ----------------------------------------------------------------------------------------------- |
+| `--file_type`     | Specify the file type for image files. Default is `.jpg`.                                     |
+| `--A`             | Specify the standard anchor point. Default is 277.                                           |
+| `--B`             | Specify the begin point (B) for line scans. Default is 200.                                  |
+| `--C`             | Specify the cease point (C) for line scans. Default is 450.                                 |
+| `--Amin`          | Specify the anchor scans starting point. Default is 100.                                    |
+| `--Amax`          | Specify the anchor scans ending point. Default is 350.                                      |
+| `--s`             | Specify the anchor scans ROI (Region of Interest) height. Default is 0.2.                   |
+| `--scan_period`   | Specify the scan period for anchor and line scans. Default is 1.                            |
+| `--filter_enable` | Enable the complementary filters for scanning in continuous sequential images. Default is `False`. |
+| `--anchor_filter` | Specify the complementary filter strength for anchor scans. Default is 0.95.                |
+| `--line_filter`   | Specify the complementary filter strength for line scans. Default is 0.95.                  |
