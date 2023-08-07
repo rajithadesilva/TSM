@@ -3,7 +3,7 @@
 The triangle scan method is a 2-step process which determines the central crop row from a semantic skeleton segmentation of a crop row. The first step (Anchor Scan) and the second step (Line Scan) scan for the topmost (Anchor Point) and the lowermost ($P_{r}$) points of the central crop row respectively. The anchor point $A$ and point $P_{r}$ always lie on the top and bottom edges of the image respectively. These two steps are explained below.
 
 <figure>
-  <img src="media/ROIs.png" alt="Alt Text" width="50%">
+  <img src="ROIs.png" alt="Alt Text" width="50%">
   <figcaption>Figure 1: Regions of interest for anchor scan and line scan. Anchor Scan ROI: RED, Line Scan ROI: Green. </figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ The anchor point is only validated if the scanner parameter: $\left( \sum_{y=0 �
 $A = argmax \left( \sum_{y=0 → y=h} I(X,y) \right)   (1)$
 
 <figure>
-  <img src="media/ascans.png" alt="Alt Text" width="50%">
+  <img src="ascans.png" alt="Alt Text" width="50%">
   <figcaption>Figure 2: Anchor scans distribution. </figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ $P_{r} = argmax \Biggl[ \sum_{I_{xy}=A→ I_{xy}=P} I(x,y) \Biggr]_{P=B}^{P=C} (
 The definition of points $B$ and $C$ are dependent on the crop height, camera mounting height and camera mounting angle. The calibration procedure outlined below allows to set the $B,C$ points at bottom left and bottom right corners of the image frame respectively. However, the $B,C$ points could be tightly defined based on additional observations relevant to a given scenario. For example, a visual servoing controller will always attempt to align the central crop row to a vertical position within the image frame. A maximum possible crop row orientation limit could be established as a prior with sufficient testing of the visual servoing setup. Such priors could be used to limit the relative offset of $B,C$ points from point $A$, leading to a lower computational time for scanning procedure given in Equation 2. Points $B$ and $C$ will always lie on the lowermost edge of the image.
 
 <figure>
-  <img src="media/scans.png" alt="Alt Text"  width="50%">
+  <img src="scans.png" alt="Alt Text"  width="50%">
   <figcaption>Figure 3: Line scans distribution. </figcaption>
 </figure>
 
@@ -45,12 +45,12 @@ The triangle scan method relies on the appropriate combination of mounting heigh
 The user is free to mount the camera at any mounting height and pitch angle as long as above conditions are met. Equation 2 yields a peak from $\sum_{I_{xy}=A→ I_{xy}=P} I(x,y)$ to determine $P_{r}$ position. The adjacent crop rows to the central crop row must be kept outside the triangular ROI (line scans ROI) to ensure the yielded peak belongs to the central crop row. To this end, the points B and C could be declared at bottom left and bottom right corners respectively, for general usage for a given calibrated camera position. 
 
 <figure>
-  <img src="media/Husky CRF.png" alt="Alt Text"  width="50%">
+  <img src="Husky CRF.png" alt="Alt Text"  width="50%">
   <figcaption>Figure 4: Initial position for calibration (a. Top view of calibration position, b. Side view of calibration position). </figcaption>
 </figure>
 
 <figure>
-  <img src="media/calib.png" alt="Alt Text"  width="40%">
+  <img src="calib.png" alt="Alt Text"  width="40%">
   <figcaption>Figure 5: Calibration mask overlay example (Red: Central guideline, Blue: Lateral guidelines, A: Anchor point, B: Begin point, C: Cease point). </figcaption>
 </figure>
 
