@@ -3,7 +3,7 @@
 The triangle scan method is a 2-step process which determines the central crop row from a semantic skeleton segmentation of a crop row. The first step (Anchor Scan) and the second step (Line Scan) scan for the topmost (Anchor Point) and the lowermost ($P_{r}$) points of the central crop row respectively. The anchor point $A$ and point $P_{r}$ always lie on the top and bottom edges of the image respectively. These two steps are explained below.
 
 <figure>
-  <img src="ROIs.png" alt="Alt Text" width="50%">
+  <img src="ROIs.png" alt="Alt Text" width="70%">
   <figcaption>Figure 1: Regions of interest for anchor scan and line scan. Anchor Scan ROI: RED, Line Scan ROI: Green. </figcaption>
 </figure>
 
