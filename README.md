@@ -55,3 +55,5 @@ python triangle_scan_rgb.py --file_type=".png"
 ```
 
 Link to full paper: [Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields](https://arxiv.org/pdf/2209.14003.pdf)
+
+## Licence: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
