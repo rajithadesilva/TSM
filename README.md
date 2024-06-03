@@ -46,11 +46,14 @@ python triangle_scan_rgb.py --file_type=".png"
 ## Citation
 
 ```
-@article{de2022vision,
-  title={Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields},
+@article{de2024vision,
+  title={Vision based crop row navigation under varying field conditions in arable fields},
   author={de Silva, Rajitha and Cielniak, Grzegorz and Gao, Junfeng},
-  journal={arXiv preprint arXiv:2209.14003},
-  year={2022}
+  journal={Computers and Electronics in Agriculture},
+  volume={217},
+  pages={108581},
+  year={2024},
+  publisher={Elsevier}
 }
 ```
 
